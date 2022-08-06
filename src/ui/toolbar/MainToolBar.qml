@@ -186,6 +186,8 @@ Item {
                     }
                 }
 
+
+
                 Item {
                     Layout.fillHeight:  true
                     width:              ScreenTools.defaultFontPixelWidth / 2
@@ -313,14 +315,43 @@ Item {
     //-- Waiting for a vehicle
     QGCLabel {
         anchors.rightMargin:    ScreenTools.defaultFontPixelWidth
-        anchors.right:          parent.right
+
         anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.horizontalCenterOffset: 400
+
         text:                   qsTr("Waiting For Vehicle Connection")
         font.pointSize:         ScreenTools.mediumFontPointSize
         font.family:            ScreenTools.demiboldFontFamily
         color:                  qgcPal.colorRed
         visible:                !activeVehicle
     }
+
+    Button{
+        anchors.right: parent.right
+
+
+        id: btn
+        Layout.fillHeight: true
+        width: height*3
+        //anchors.right: QGCLabel.left;
+       text: "Logout"
+
+    }
+   /* QGCLabel {
+        anchors.rightMargin:    ScreenTools.defaultFontPixelWidth
+        anchors.right:parent.right
+
+        anchors.verticalCenter: parent.verticalCenter
+
+        text:                   qsTr("Waiting For Vehicle Connection")
+        font.pointSize:         ScreenTools.mediumFontPointSize
+        font.family:            ScreenTools.demiboldFontFamily
+        color:                  qgcPal.colorRed
+        visible:                !activeVehicle
+    }*/
+
+
 
     //-------------------------------------------------------------------------
     //-- Connection Status
